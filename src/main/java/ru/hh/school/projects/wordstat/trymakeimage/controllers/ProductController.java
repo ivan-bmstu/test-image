@@ -18,7 +18,7 @@ public class ProductController {
 
     @GetMapping
     public String hello(){
-        return "Hello world!";
+        return "Hello!";
     }
 
     @GetMapping("{id}")

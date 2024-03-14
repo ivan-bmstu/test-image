@@ -13,9 +13,16 @@
 	<version>0.0.1</version>
 	<name>try-make-image</name>
 	<description>try-make-image</description>
+
+
+
 	<properties>
 		<java.version>21</java.version>
+		<db.dns>localhost:5432</db.dns>
+		<db.username>postgres</db.username>
+		<db.password>12345</db.password>
 	</properties>
+
 	<dependencies>
 
 		<dependency>
@@ -39,10 +46,14 @@
 	</dependencies>
 
 	<build>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<finalName>BackendApp</finalName>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>

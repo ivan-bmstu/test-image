@@ -1,8 +1,10 @@
-FROM ubuntu:latest
+FROM eclipse-temurin:21
+
 EXPOSE 9999
-RUN apt-get update && apt apt install -y git openjdk-21-jre maven
 
-WORKDIR test-image
-ADD ./target/try-make-image-0.0.1.jar .
+RUN mkdir /opt/app
+COPY ./target/BackendApp.jar /opt/app
 
-ENTRYPOINT mvn spring-boot:run
+CMD ["java", "-jar", "/opt/app/BackendApp.jar"]
+
+

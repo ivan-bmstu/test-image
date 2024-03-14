@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:15.4
+    restart: always
+    environment:
+      - POSTGRES_DB=demo
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
+    ports:
+      - '5432:5432'
+
+  backend-add:
+    image: backend-app:latest
+    build:
+      ../
+    restart: always
+    environment:
+      DB_IP_SERVER: db
+      DB_USERNAME: postgres
+      DB_PASSWORD: 12345
+    ports:
+      - '80:9999'
+
+volumes:
+  db:
+    driver: local
