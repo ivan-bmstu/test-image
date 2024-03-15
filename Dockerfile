@@ -1,10 +1,11 @@
 FROM eclipse-temurin:21
 
+RUN apt-get update && apt-get install dos2unix
+
+WORKDIR codebase
+ADD . .
+
+RUN ["./mvnw", "clean", "install", "-DskipTests"]
 EXPOSE 9999
 
-RUN mkdir /opt/app
-COPY ./target/BackendApp.jar /opt/app
-
-CMD ["java", "-jar", "/opt/app/BackendApp.jar"]
-
-
+ENTRYPOINT ["java", "-jar", "./target/BackendApp.jar"]

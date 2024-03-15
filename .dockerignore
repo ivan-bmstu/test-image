@@ -1,0 +1,9 @@
+.idea/
+.git/
+target/
+dev_env/
+.gitignore
+.dockerignore
+docerfile
+HELP.md
+README.md

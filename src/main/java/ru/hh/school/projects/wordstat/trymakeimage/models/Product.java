@@ -10,8 +10,16 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    Integer id;
     String title;
+
+    public Product() {
+    }
+
+    public Product(Integer id, String title) {
+        this.id = id;
+        this.title = title;
+    }
 
     public int getId() {
         return id;
@@ -27,5 +35,13 @@ public class Product {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                '}';
     }
 }
