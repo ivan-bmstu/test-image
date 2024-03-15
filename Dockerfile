@@ -1,10 +1,11 @@
 FROM eclipse-temurin:21
 
-EXPOSE 9999
-
-RUN mkdir /opt/app
-COPY ./target/BackendApp.jar /opt/app
-
-CMD ["java", "-jar", "/opt/app/BackendApp.jar"]
+RUN apt-get update && apt-get install dos2unix
+WORKDIR codebase
+COPY . .
+CMD mvnw clean install
+#EXPOSE 9999
+#CMD ["java", "-jar", "./codebase/target/BackendApp.jar"]
+ENTRYPOINT mvnw spring-boot:run
 
 

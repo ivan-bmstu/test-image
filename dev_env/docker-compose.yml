@@ -7,9 +7,9 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=12345
     volumes:
-      - ./initdb:/docker-entrypoint-initdb.d
+      - ../src/main/resources:/docker-entrypoint-initdb.d
     ports:
-      - '5432:5432'
+      - '5437:5432'
 
   backend-add:
     image: backend-app:latest
