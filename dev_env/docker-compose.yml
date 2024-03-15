@@ -6,8 +6,6 @@ services:
       - POSTGRES_DB=demo
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=12345
-    volumes:
-      - ../src/main/resources:/docker-entrypoint-initdb.d
     ports:
       - '5437:5432'
 

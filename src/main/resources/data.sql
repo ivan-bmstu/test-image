@@ -6,3 +6,5 @@ INSERT INTO product(title) VALUES ('Chocolate');
 INSERT INTO product(title) VALUES ('Meat');
 INSERT INTO product(title) VALUES ('Bread');
 INSERT INTO product(title) VALUES ('Apple');
+INSERT INTO product(title) VALUES ('Honey');
+INSERT INTO product(title) VALUES ('Cola');
